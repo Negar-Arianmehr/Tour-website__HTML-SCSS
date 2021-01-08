@@ -1,0 +1,148 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    //    they automatically inherit the font family,but not the input elements and so we set it manual here,in the initial
+    //    state as well, but reset it to transparent. and for color
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    width: 90%;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+    &:focus {
+    outline: none;
+    //    for the border here that's being added, we have to have it in input ,because we dont want it to add plus of border
+    border-bottom: 3px solid $color-primary;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    }
+
+    //when the text on the input is invalid we want to...
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    //style placeholder/ now will only work on Safari and Chrome,
+//  this :: is for a pseudo element, and not just a pseudo class
+    &::-webkit-input-placeholder {
+      color: $color-gray-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  //So when the placeholder is shown on the input element,then we can now style it.But it's not the input that we want to
+// style.What we want to style is the label. We want the label to be hidden and not the input, and so in here we also
+// have to select the label.
+//it doesnt work Well, because the label is not a child element of the input. So we see in the HTML that there are siblings
+//So again, input, and label, they are siblings,
+//in the css there is a very powerfull selector called the sibling selector. it is an adjacent sibling?
+//Well, it's just a sibling that comes immediately after the element that we select in the first place.
+// + it is a adjacent sibling because the sibling is right next to the first element(input).
+//for using sibling the label has to next to the input .
+//so we have the input and the sibling of that element, and a sibling called 'label'.
+  &__input:placeholder-shown + &__label {
+        //if we just say opacity=0 then the element will basically still be on the page, but only invisible, but if we set it
+// to visibility hidden as well, well, then it's really gone.
+//why we dont just use visibility? Well, because we cannot animate the visibility, opacity is good for animate.
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  //we can not style the radio button that is in the input so we do all of these things
+//  ...........radio...........
+  &__radio {
+
+    &-group {
+      width: 45%;
+      display: inline-block;
+
+      @include respond(tab-port) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-input {
+      display: none;
+    }
+
+    &-label {
+      font-size: $default-font-size;
+      cursor: pointer;
+      position: relative;
+      padding-left: 4.5rem;
+    }
+
+    &-button {
+      height: 3rem;
+      width: 3rem;
+      border: 5px solid $color-primary;
+      border-radius: 50%;
+
+      //the above properties dont work, that is because we should make it a block or inline-block element.
+      display: inline;
+
+      //in order to put it exactly where we want it to be.
+      position: absolute;
+      top: -.4rem;
+      left: 0;
+
+
+      &::after {
+        //each time that we use a pseudo-element,we have to actually specify its content property.And also the display property,
+// and I set it to block here.
+        content: "";
+        display: block;
+
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-primary;
+        opacity: 0;
+        transition: opacity .2s;
+      }
+
+    }
+
+    //So as soon as we hit the label element, So we have this checked pseudo-class available to us. And what we do then is
+// to simply select the sibling of that one, and then the child because that's the one that we want to change each time
+// that the radio input is selected.
+// ~ this is like + that we used before, It will work just the same way.
+    &-input:checked ~ &-label &-button::after {
+      opacity: 1;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+

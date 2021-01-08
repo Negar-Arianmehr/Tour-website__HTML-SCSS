@@ -1,0 +1,178 @@
+.navigation {
+
+  &__checkbox{
+  //  Because of course we never want to see this one.
+    display: none;
+  }
+
+  &__button {
+  //we want it to cover __background
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    z-index: 3000;
+    text-align: center;
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.65, 0, 0.35, 1);
+
+    //as soon as the navigation is open, we will scale this entire background, okay.Like by a huge number.
+    //it makes the background cover screen
+    //transform: scale(80);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+  //Because it's a block level element and so,it automatically occupies 100% of its width.
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+
+  //  they are invisible but they are there yet. you can see cursor = pointer. so we have to add
+    opacity: 0;
+    width: 0;
+    transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      color: $color-white;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 230%;
+      transition: all .4s;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+
+  //fuctionality
+
+  //we just use the general sibling and then, with that, we will be able to select the right element.
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+//  Icon
+  //There are some styles that all of the three will share.
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-gray-dark-3;
+      display: inline-block;
+    }
+
+    //Remember that in order for the before and after pseudo elements to actually appear on the page, they need to
+    // have their content property defined.
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before { top: -.8rem;}
+    &::after { top: .8rem; }
+  }
+
+  //we want when hover is on the button, Then, from there, we can select the icon.
+  //before: because icon is the child element of button
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+// for three line in the button: All that's left to do is to now basically rotate these two here to form a cross and
+  // make the one in the middle disappear. back to checkbox act
+  //When the checkbox is selected, then we select its brother, basically, which is called a button.Then, we select the
+  // button's child, which is the icon.
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+}
+

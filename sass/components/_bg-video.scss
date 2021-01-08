@@ -1,0 +1,21 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  //it is for hidden the right and left og=f video
+  overflow: hidden;
+  .bg-video__content {
+    //for fix the video ratio of bg
+    height: 100%;
+    width: 100%;
+    //because of maintaining the aspect ratio of this video when we give it width and height.
+    //so when we set object-fit to cover,then this is actually pretty similar to the background size cover,which we do
+    // all the time with the background images. so with this element it will fill the entire parent will fill the entire
+    // parent. the part that is not cover they will simply be clipped off, okay?
+    object-fit: cover;
+  }
+}

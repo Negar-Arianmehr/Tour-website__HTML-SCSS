@@ -1,0 +1,240 @@
+/*...............................................*/
+ /*          card for tour                      */
+  /*...........................................*/
+.card {
+  //functionality
+
+  //the perspective has to be on the parent.then have a child element for this rotation.
+  //values here affect our perspective. we have to put huge number here.
+  perspective: 150rem;
+  //it will work in Firefox as well
+  -moz-perspective: 150rem;
+  position: relative;
+  //perspective doesnt work correctly, because its height collapsed. because of absolute ,they're also taken out of
+  // the natural flow.we took these cards out of their natural flow.And therefore the parent collapsed and lost its
+  //height. so we have to add height here also
+  height: 52rem;
+
+  &__side {
+    height: 52rem;
+    transition: all .8s ease;
+
+    //without it the front is above and back is the under it. so we want to be overlaped so they need to be on top of
+    // one another. we simply use absolute positioning.
+    position: absolute;
+    top: 0;
+    left: 0;
+    //Now since we gave them an absolute position,what the elements do is that they basically start fitting to their width.
+    width: 100%;
+    //that was just to fix a weird animation error.hidden :it basically hides the back part of an element.
+    //So you saw that when we rotated the card where it said front, it then, as soon as we rotated it,
+    //that text started from the right side, until we were seeing the card from the back side.
+    //when we specify this backface-visibility to hidden we will no longer be able to see that back part.
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+
+    &--front {
+      background-color: #f3f6f2;
+    }
+
+    &--back {
+      //we now have implemented this side of the card
+      //this backside is already flipped basically,
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      }
+    }
+
+
+  }
+
+  //for linear gradient, it's image not color, of course.
+
+  //when the card is hovered, then the card side will be transformed
+  //it was moving towards you
+  &:hover &__side--front {
+    //negative: this should move in the opposite direction
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    //  it's already at 180, it now needs to go back to zero
+    transform: rotateY(0);
+  }
+
+  //  Front side styling
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    //for change the color of the picture
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    //So this clip-path in Google Chrome, the breaks the over flow that we sat for that.
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
+      url("../img/nat-5.jpg");
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary-dark, 0.8)),
+      url("../img/nat-6.jpg");
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+      url("../img/nat-7.jpg");
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__span {
+    padding: 1rem 1.5rem;
+    ////when your text go to the next line ,padding doesnt effect on it.with this property you can see padding
+    // in the next line
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary-dark, 0.8));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+    }
+
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.5rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-gray-light-2;
+        }
+      }
+    }
+  }
+
+  // Back side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  //And so down here we have the media query, and we now want to add another condition to it. Now the problem here is that
+  //we used this respond mix in in order to write this media query, and so it's impossible to add a second condition to the
+  //media query, so what we have to do here is to actually write out the real media query,>> whenever we have a device
+  //which uses touch as the primary input.
+
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+  only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+
+    &__side {
+      height: auto;
+      //because we dont have two sides
+      position: relative;
+      box-shadow: none;
+      background-color: white;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    // Front side styling
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+
+  }
+}
+
+

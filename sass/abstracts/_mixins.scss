@@ -1,0 +1,72 @@
+//is that this row here has a zero-pixel height,why that happens,it is because all of the child elements of this row
+// element are floated,and so the height collapses and becomes zero. so we must use the clearfix hack.
+//after the element which will then clear these floats.
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    //both means right and left
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//MEDIA QUERY MANAGER
+/*
+0-600px:    phone
+60-900px:   tablet portrait
+900-1200px: tablet landscape
+[1200-1800] is where our normal styles apply
+1800px + :  Big Desktop
+
+$breakpoint arguement choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+ */
+
+//if you want to write it for all of devices it's not a good idea
+//@mixin respond-phone {
+//  //How do we know that, for example, that the code that we write here, so let's go back to what we had before(in html).
+//  //how can say 50% put it for font-size>>>>it is with content
+//  @media (max-width: 600px) {@content};
+//}
+
+//About rems and ems, there's an important particularity about them in media queries.
+//That's because ems and rems in media queries, they are not affected by a root font size setting,(the 62.5% we put in the html)
+//What that means is that one rem or one em in a media query is always just equal to the font size which is coming from
+// the browser, and that's by default 16 pixels, but if the user changes it to 20 pixels, then it will be 20 pixels no
+// matter what we have in our base font definition.
+//What we're going to use here is ems and not rems, because rems fail to work as intended in some of the browsers.
+//is that ems are the best option for media queries.
+
+//ORDER : base + typography > general layout +grid > page layout > components
+
+//1em=16px
+
+//about only screen >>>only screen, and then the max width, so for example if someone tries to print out our page,
+//then these media queries don't apply,
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content } //600px >>>>600/16 = 73.5em
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) { @content }  //900px >>>>900/16 = 56.25em
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content }  //1200px >>>>1200/16 = 75em
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }  //1800px >>>>1800/16 = 112.5em
+  }
+}
+
