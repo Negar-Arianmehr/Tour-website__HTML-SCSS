@@ -1,58 +1,58 @@
 
 *,
-//we have to add it for applly these rules for sudo classes.we expected because of the box-sizing of border-box,
-// so actually it's down in the body. they are not in the golobal selector.
+  //we have to add it for applly these rules for sudo classes.we expected because of the box-sizing of border-box,
+  // so actually it's down in the body. they are not in the golobal selector.
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    //box-sizing property by itself is not inherited,by seting here,on each and every element on the entire page to
-// inherit, every element on the entire page to inherit, it'll automatically inherit whatever we put here on border-box.
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  //box-sizing property by itself is not inherited,by seting here,on each and every element on the entire page to
+  // inherit, every element on the entire page to inherit, it'll automatically inherit whatever we put here on border-box.
+  box-sizing: inherit;
 }
 
 html {
-    //This defines what 1rem is
-    font-size: 65.5%; //1rem =>10px >>>10px/16 = 62.5%
+  //This defines what 1rem is
+  font-size: 65.5%; //1rem =>10px >>>10px/16 = 62.5%
 
-    //because we have it in the max-width=900. they have the same value.
-    //@include respond(phone) {
-    //    font-size: 50%;
-    //}
+  //because we have it in the max-width=900. they have the same value.
+  //@include respond(phone) {
+  //    font-size: 50%;
+  //}
 
-    //Always the larger ones before the smaller ones. because always second one is applied to screen and then the last
-    // one will be used..both include <900. if tab-land was in the second place,after tab-port, we haven't seen the
-    // tab-land...So if we did it like this, tab-land would mess up our entire code, our entire structure of our media queries.
-    //consider 700px to understand it.
+  //Always the larger ones before the smaller ones. because always second one is applied to screen and then the last
+  // one will be used..both include <900. if tab-land was in the second place,after tab-port, we haven't seen the
+  // tab-land...So if we did it like this, tab-land would mess up our entire code, our entire structure of our media queries.
+  //consider 700px to understand it.
 
-    //<1200 >>>in the range between 900 and 1,200.
-    @include respond(tab-land) { //width < 1200?
-        font-size: 56.25%;  //1rem = 9px >>> 9/16 = 56.25%
-    }
+  //<1200 >>>in the range between 900 and 1,200.
+  @include respond(tab-land) { //width < 1200?
+    font-size: 56.25%; //1rem = 9px >>> 9/16 = 56.25%
+  }
 
-    @include respond(tab-port) {  //width < 900?
-        font-size: 50%;  //1rem = 8px >>> 8/16=50%
-    }
+  @include respond(tab-port) { //width < 900?
+    font-size: 50%; //1rem = 8px >>> 8/16=50%
+  }
 
-    @include respond(big-desktop) {
-        font-size: 75%; //1rem=12 >>> 12/16 = 75%
-    }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem=12 >>> 12/16 = 75%
+  }
 }
 
 body {
-    //it makes it a bit easier to change the box-sizing...it doesn't make a huge difference,just a slightly better
-    // practice to do the box-sizing border-box like this.
-    box-sizing: border-box;
-    //we changed all of px to rem relative to 10...//we specified 10px=65.5%=1rem....>>30px = 3rem
-    padding: 3rem;
+  //it makes it a bit easier to change the box-sizing...it doesn't make a huge difference,just a slightly better
+  // practice to do the box-sizing border-box like this.
+  box-sizing: border-box;
+  //we changed all of px to rem relative to 10...//we specified 10px=65.5%=1rem....>>30px = 3rem
+  padding: 3rem;
 
-    @include respond(tab-port) {
-        padding: 0;
-    }
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
 
 //when users select the part of the paragraph
 ::selection {
-    background-color: $color-primary;
-    color: $color-white;
+  background-color: $color-primary;
+  color: $color-white;
 }

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
 
-<!-- Alright, so that was another small thing that I wanted to fix and since we're talking about media queries, there's
-another thing that I should show you and that's this piece of code,and this was already in our HTML so in the starter
-files that are provided for this project, but we should still not overlook this, because responsive web design does not
-work without having this meta element here in the HTML head.-->
+    <!-- Alright, so that was another small thing that I wanted to fix and since we're talking about media queries, there's
+    another thing that I should show you and that's this piece of code,and this was already in our HTML so in the starter
+    files that are provided for this project, but we should still not overlook this, because responsive web design does not
+    work without having this meta element here in the HTML head.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -21,438 +21,444 @@ work without having this meta element here in the HTML head.-->
 
 <body>
 
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-        <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon"></span>
-        </label>
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon"></span>
+    </label>
 
-        <div class="navigation__background"></div>
+    <div class="navigation__background"></div>
 
-        <div class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Your benefit</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link">Book Now</a></li>
-            </ul>
-        </div>
+    <div class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="#" class="navigation__link">About</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Your benefit</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Book Now</a></li>
+        </ul>
+    </div>
+</div>
+
+<header class="header ">
+
+    <div class="header__logo-box">
+        <img src="img/logo-white.png" alt=Logo" class="header__logo">
     </div>
 
-    <header class="header ">
+    <div class="header__text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary--main">Outdoors</span>
+            <span class="heading-primary--sub">where makes you happy</span>
+        </h1>
 
-        <div class="header__logo-box">
-            <img src="img/logo-white.png" alt=Logo" class="header__logo">
-        </div>
+        <a href="#section-tour" class="btn btn--white btn--animated">discover our tours</a>
+    </div>
 
-        <div class="header__text-box">
-            <h1 class="heading-primary">
-                <span class="heading-primary--main">Outdoors</span>
-                <span class="heading-primary--sub">where makes you happy</span>
-            </h1>
+</header>
 
-            <a href="#section-tour" class="btn btn--white btn--animated">discover our tours</a>
-        </div>
-
-    </header>
-
-    <main>
-        <section class="section-about">
-            <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">
-                    Exciting experience for adventurous people
-                </h2>
-            </div>
-
-            <div class="row">
-                <div class="col-1-of-2">
-                    <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature.</h3>
-                    <p class="paragraph">
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                    </p>
-
-                    <h3 class="heading-tertiary u-margin-bottom-small">Live advanture like you neverhave before</h3>
-                    <p class="paragraph">
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form,
-                    </p>
-
-                    <a href="#" class="btn-text">learn more &rarr;</a>
-                </div>
-
-                <div class="col-1-of-2">
-                    <div class="composition">
-<!-- Density and Resolution Switching , tag is called the width descriptor-->
-<!-- 300w and 1000w are in the size of the picture...we basically inform the browser of the width of each of these
- images without the browser having to download them to get access .but the browser dosnt know wich one hase to download
- so we use the sizes Well, basically we use sizes to inform the browser about the approximate width of the image
- at different view port width.  20vw = 170(width of the small pic we had)/900 >>> has a width of 20% of the view port width.
- we take care of actually both resolution switching and density switching.
-the browser has choice .we give it information , it has to choose best one for the screen-->
-                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                             src="img/nat-1-large.jpg"
-                             class="composition__photo composition__photo--p1"
-                             alt="photo 1">
-
-                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                             src="img/nat-2-large.jpg"
-                             class="composition__photo composition__photo--p2"
-                             alt="photo 2">
-
-                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                             sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
-                             src="img/nat-3-large.jpg"
-                             class="composition__photo composition__photo--p3"
-                             alt="photo 3">
-
-<!--                    <img src="img/nat-1-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p1">-->
-<!--                    <img src="img/nat-2-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p2">-->
-<!--                    <img src="img/nat-3-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p3">-->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-feature">
-
-            <div class="row">
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-world"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
-                        <p class="feature-box__text">
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-compass"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
-                        <p class="feature-box__text">
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-map"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
-                        <p class="feature-box__text">
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-1-of-4">
-                    <div class="feature-box">
-                        <i class="feature-box__icon icon-basic-heart"></i>
-                        <h3 class="heading-tertiary u-margin-bottom-small">live a healthier line</h3>
-                        <p class="feature-box__text">
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section-tour" id="section-tour">
-
-            <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">
-                    most popular tour
-                </h2>
-            </div>
-
-            <div class="row">
-
-                <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__side card__side--front">
-                            <div class="card__picture card__picture--1">
-
-                            </div>
-                            <h3 class="card__heading">
-                                <span class="card__span card__span--1">The sea explorer</span>
-                            </h3>
-                            <div class="card__details">
-                                <ul>
-                                    <li>3 days tours</li>
-                                    <li>Up to 30 people</li>
-                                    <li>2 tour guides</li>
-                                    <li>Sleep in cozy hotels</li>
-                                    <li>Difficulty: easy</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="card__side card__side--back card__side--back-1">
-                            <div class="card__cta">
-                                <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">$297</p>
-                                </div>
-                                <a href="#popup" class="btn btn--white">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__side card__side--front">
-                            <div class="card__picture card__picture--2">
-                                &nbsp;
-                            </div>
-                            <div class="card__heading">
-                                <h3><span class="card__span card__span--2">The forest hiker</span></h3>
-                            </div>
-                            <div class="card__details">
-                                <ul>
-                                    <li>7 days tour</li>
-                                    <li>Up to 40 people</li>
-                                    <li>6 tour guides</li>
-                                    <li>Sleep in provided tents</li>
-                                    <li>Difficulty: medium</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="card__side card__side--back card__side--back-2">
-                            <div class="card__cta">
-                                <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">$497</p>
-                                </div>
-                                <a href="#popup" class="btn btn--white">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__side card__side--front">
-                            <div class="card__picture card__picture--3">
-
-                            </div>
-                            <h3 class="card__heading">
-                                <span class="card__span card__span--3">The sea explorer</span>
-                            </h3>
-                            <div class="card__details">
-                                <ul>
-                                    <li>3 days tours</li>
-                                    <li>Up to 30 people</li>
-                                    <li>2 tour guides</li>
-                                    <li>Sleep in cozy hotels</li>
-                                    <li>Difficulty: easy</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="card__side card__side--back card__side--back-3">
-                            <div class="card__cta">
-                                <div class="card__price-box">
-                                    <p class="card__price-only">Only</p>
-                                    <p class="card__price-value">$297</p>
-                                </div>
-                                <a href="#popup" class="btn btn--white">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-             </div>
-
-            <div class="u-center-text u-margin-top-huge">
-                <a href="#" class="btn btn--green">discover all tours</a>
-            </div>
-        </section>
-
-        <section class="section-stories">
-
-            <div class="bg-video">
-                <video class="bg-video__content" autoplay muted loop>
-                    <source type="video/mp3" src="img/video.mp4">
-                    <source type="video/webm" src="img/video.webm">
-                    This a video that your browser can not play.
-                </video>
-            </div>
-
-            <div class="u-center-text u-margin-bottom-big">
-                <h2 class="heading-secondary">
-                    we make people genuinely happy
-                </h2>
-            </div>
-
-            <div class="row">
-                <div class="story">
-                    <figure class="story__shape">
-                        <img src="img/nat-8.jpg" alt="a person" class="story__shape__img">
-                        <figcaption class="story__caption">Negar Arian</figcaption>
-                    </figure>
-                    <div class="story__text">
-                        <h3 class="heading u-margin-bottom-small">We had best time with my family</h3>
-                        <p>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                            interested.
-                            Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                            reproduced
-                            in their exact original form,
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="story">
-                    <figure class="story__shape">
-                        <img src="img/nat-9.jpg" alt="" class="story__shape__img">
-                        <figcaption class="story__caption">
-                            Ali Radjabi
-                        </figcaption>
-                    </figure>
-
-                    <div class="story__text">
-                        <h3 class="heading u-margin-bottom-small">wow! My life is completely different now</h3>
-                        <p>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                            interested.
-                            Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                            reproduced
-                            in their exact original form,
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="u-center-text u-margin-top-huge">
-                <a href="#" class="btn-text">Read all storied &rarr;</a>
-            </div>
-
-        </section>
-
-        <section class="section-book">
-
-            <div class="row">
-                <div class="book">
-                    <div class="book__form">
-                        <form action="#" class="form">
-                            <div class="u-margin-bottom-medium">
-                                <h2 class="heading-secondary">
-                                    start booking now
-                                </h2>
-                            </div>
-                            <div class="form__group">
-                                <input type="text" class="form__input" id="name" placeholder="Full name" required>
-                                <label for="name" class="form__label">Full name</label>
-                            </div>
-
-                            <div class="form__group">
-                                <input type="email" class="form__input" id="email" placeholder="email address" required>
-                                <label for="email" class="form__label">Email address</label>
-                            </div>
-
-                            <div class="form__group">
-                                <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" name="size" id="small">
-                                    <label for="small" class="form__radio-label">
-                                        <span class="form__radio-button"></span>
-                                        Small tour group
-                                    </label>
-                                </div>
-                                <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" name="size" id="large">
-                                    <label for="large" class="form__radio-label">
-                                        <span class="form__radio-button"></span>
-                                        Large tour group
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form__group">
-                                    <button class="btn btn--green">Next Step &rarr;</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-
-        <div class="footer__logo-box">
-<!--  we want to make images depend on the screen width with using picture tag.   ART DIRECTION
-      here the browser doesnt have any choice like "composition" which is actually exactly what we want for art direction.-->
-            <picture>
-                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" class="footer__logo"
-                media="(max-width: 37.5em)">
-                <source srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" class="footer__logo"
-                media="(max-width: 112.5em)">
-<!--     density switching>>> for 1x use the first img, for high resolution use 2x img. we can just use it.-->
-                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo"
-                     src="img/logo-green-2x.png">
-            </picture>
+<main>
+    <section class="section-about">
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                Exciting experience for adventurous people
+            </h2>
         </div>
 
         <div class="row">
             <div class="col-1-of-2">
-                <div class="footer__navigation">
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Carriers</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
-                    </ul>
-                </div>
+                <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature.</h3>
+                <p class="paragraph">
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                    in their exact original form, accompanied by English versions from the 1914 translation by H.
+                    Rackham.
+                </p>
+
+                <h3 class="heading-tertiary u-margin-bottom-small">Live advanture like you neverhave before</h3>
+                <p class="paragraph">
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                    in their exact original form,
+                </p>
+
+                <a href="#" class="btn-text">learn more &rarr;</a>
             </div>
 
             <div class="col-1-of-2">
-                <p class="footer__copyright">
-                    Built by<a href="#" class="footer__link">Negar Arianmehr</a> for my training course from<a href="#" class="footer__link">Jonas Schmedtmann</a> ,online course
-                    <a href="#" class="footer__link">Advance CSS and Sass</a>. Copyright &copy; by Negar Arianmehr.
-                </p>
+                <div class="composition">
+                    <!-- Density and Resolution Switching , tag is called the width descriptor-->
+                    <!-- 300w and 1000w are in the size of the picture...we basically inform the browser of the width of each of these
+                     images without the browser having to download them to get access .but the browser dosnt know wich one hase to download
+                     so we use the sizes Well, basically we use sizes to inform the browser about the approximate width of the image
+                     at different view port width.  20vw = 170(width of the small pic we had)/900 >>> has a width of 20% of the view port width.
+                     we take care of actually both resolution switching and density switching.
+                    the browser has choice .we give it information , it has to choose best one for the screen-->
+                    <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                         sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                         src="img/nat-1-large.jpg"
+                         class="composition__photo composition__photo--p1"
+                         alt="photo 1">
+
+                    <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                         sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                         src="img/nat-2-large.jpg"
+                         class="composition__photo composition__photo--p2"
+                         alt="photo 2">
+
+                    <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                         sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                         src="img/nat-3-large.jpg"
+                         class="composition__photo composition__photo--p3"
+                         alt="photo 3">
+
+                    <!--                    <img src="img/nat-1-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p1">-->
+                    <!--                    <img src="img/nat-2-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p2">-->
+                    <!--                    <img src="img/nat-3-large.jpg" alt="pic of nature" class="composition__photo composition__photo&#45;&#45;p3">-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-feature">
+
+        <div class="row">
+            <div class="col-1-of-4">
+                <div class="feature-box">
+                    <i class="feature-box__icon icon-basic-world"></i>
+                    <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
+                    <p class="feature-box__text">
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+                <div class="feature-box">
+                    <i class="feature-box__icon icon-basic-compass"></i>
+                    <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
+                    <p class="feature-box__text">
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+                <div class="feature-box">
+                    <i class="feature-box__icon icon-basic-map"></i>
+                    <h3 class="heading-tertiary u-margin-bottom-small">We travel to world</h3>
+                    <p class="feature-box__text">
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+                <div class="feature-box">
+                    <i class="feature-box__icon icon-basic-heart"></i>
+                    <h3 class="heading-tertiary u-margin-bottom-small">live a healthier line</h3>
+                    <p class="feature-box__text">
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-tour" id="section-tour">
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                most popular tour
+            </h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-1-of-3">
+                <div class="card">
+                    <div class="card__side card__side--front">
+                        <div class="card__picture card__picture--1">
+
+                        </div>
+                        <h3 class="card__heading">
+                            <span class="card__span card__span--1">The sea explorer</span>
+                        </h3>
+                        <div class="card__details">
+                            <ul>
+                                <li>3 days tours</li>
+                                <li>Up to 30 people</li>
+                                <li>2 tour guides</li>
+                                <li>Sleep in cozy hotels</li>
+                                <li>Difficulty: easy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card__side card__side--back card__side--back-1">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value">$297</p>
+                            </div>
+                            <a href="#popup" class="btn btn--white">Book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1-of-3">
+                <div class="card">
+                    <div class="card__side card__side--front">
+                        <div class="card__picture card__picture--2">
+                            &nbsp;
+                        </div>
+                        <div class="card__heading">
+                            <h3><span class="card__span card__span--2">The forest hiker</span></h3>
+                        </div>
+                        <div class="card__details">
+                            <ul>
+                                <li>7 days tour</li>
+                                <li>Up to 40 people</li>
+                                <li>6 tour guides</li>
+                                <li>Sleep in provided tents</li>
+                                <li>Difficulty: medium</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card__side card__side--back card__side--back-2">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value">$497</p>
+                            </div>
+                            <a href="#popup" class="btn btn--white">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1-of-3">
+                <div class="card">
+                    <div class="card__side card__side--front">
+                        <div class="card__picture card__picture--3">
+
+                        </div>
+                        <h3 class="card__heading">
+                            <span class="card__span card__span--3">The sea explorer</span>
+                        </h3>
+                        <div class="card__details">
+                            <ul>
+                                <li>3 days tours</li>
+                                <li>Up to 30 people</li>
+                                <li>2 tour guides</li>
+                                <li>Sleep in cozy hotels</li>
+                                <li>Difficulty: easy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card__side card__side--back card__side--back-3">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value">$297</p>
+                            </div>
+                            <a href="#popup" class="btn btn--white">Book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="u-center-text u-margin-top-huge">
+            <a href="#" class="btn btn--green">discover all tours</a>
+        </div>
+    </section>
+
+    <section class="section-stories">
+
+        <div class="bg-video">
+            <video class="bg-video__content" autoplay muted loop>
+                <source type="video/mp3" src="img/video.mp4">
+                <source type="video/webm" src="img/video.webm">
+                This a video that your browser can not play.
+            </video>
+        </div>
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                we make people genuinely happy
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="story">
+                <figure class="story__shape">
+                    <img src="img/nat-8.jpg" alt="a person" class="story__shape__img">
+                    <figcaption class="story__caption">Negar Arian</figcaption>
+                </figure>
+                <div class="story__text">
+                    <h3 class="heading u-margin-bottom-small">We had best time with my family</h3>
+                    <p>
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                        interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                        reproduced
+                        in their exact original form,
+                    </p>
+                </div>
             </div>
         </div>
 
-    </footer>
+        <div class="row">
+            <div class="story">
+                <figure class="story__shape">
+                    <img src="img/nat-9.jpg" alt="" class="story__shape__img">
+                    <figcaption class="story__caption">
+                        Ali Radjabi
+                    </figcaption>
+                </figure>
+
+                <div class="story__text">
+                    <h3 class="heading u-margin-bottom-small">wow! My life is completely different now</h3>
+                    <p>
+                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                        interested.
+                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                        reproduced
+                        in their exact original form,
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="u-center-text u-margin-top-huge">
+            <a href="#" class="btn-text">Read all storied &rarr;</a>
+        </div>
+
+    </section>
+
+    <section class="section-book">
+
+        <div class="row">
+            <div class="book">
+                <div class="book__form">
+                    <form action="#" class="form">
+                        <div class="u-margin-bottom-medium">
+                            <h2 class="heading-secondary">
+                                start booking now
+                            </h2>
+                        </div>
+                        <div class="form__group">
+                            <input type="text" class="form__input" id="name" placeholder="Full name" required>
+                            <label for="name" class="form__label">Full name</label>
+                        </div>
+
+                        <div class="form__group">
+                            <input type="email" class="form__input" id="email" placeholder="email address" required>
+                            <label for="email" class="form__label">Email address</label>
+                        </div>
+
+                        <div class="form__group">
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" name="size" id="small">
+                                <label for="small" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    Small tour group
+                                </label>
+                            </div>
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" name="size" id="large">
+                                <label for="large" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    Large tour group
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <button class="btn btn--green">Next Step &rarr;</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+
+    <div class="footer__logo-box">
+        <!--  we want to make images depend on the screen width with using picture tag.   ART DIRECTION
+              here the browser doesnt have any choice like "composition" which is actually exactly what we want for art direction.-->
+        <picture>
+            <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" class="footer__logo"
+                    media="(max-width: 37.5em)">
+            <source srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" class="footer__logo"
+                    media="(max-width: 112.5em)">
+            <!--     density switching>>> for 1x use the first img, for high resolution use 2x img. we can just use it.-->
+            <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo"
+                 src="img/logo-green-2x.png">
+        </picture>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-2">
+            <div class="footer__navigation">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Carriers</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-1-of-2">
+            <p class="footer__copyright">
+                Built by<a href="#" class="footer__link">Negar Arianmehr</a> for my training course from<a href="#"
+                                                                                                           class="footer__link">Jonas
+                Schmedtmann</a> ,online course
+                <a href="#" class="footer__link">Advance CSS and Sass</a>. Copyright &copy; by Negar Arianmehr.
+            </p>
+        </div>
+    </div>
+
+</footer>
 
 <!--popup section-->
 
-    <div class="popup" id="popup">
-        <div class="popup__content">
-            <div class="popup__left">
-                <img src="img/nat-8.jpg" alt="tour image" class="popup__img">
-                <img src="img/nat-9.jpg" alt="tour image" class="popup__img">
-            </div>
+<div class="popup" id="popup">
+    <div class="popup__content">
+        <div class="popup__left">
+            <img src="img/nat-8.jpg" alt="tour image" class="popup__img">
+            <img src="img/nat-9.jpg" alt="tour image" class="popup__img">
+        </div>
 
-            <div class="popup__right">
-                <a href="#section-tour" class="popup__close">&times;</a>
-                <h2 class="heading-secondary ">Start booking now</h2>
-                <h3 class="heading-tertiary u-margin-top-tiny">important &ndash; please read these terms before booking</h3>
-                <p class="popup__text">
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                    interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                    reproduced in their exact original form,The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                    interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                    in their exact original form,The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                    interested.
-                </p>
-                <a href="#" class="btn btn--green">Book Now</a>
-            </div>
+        <div class="popup__right">
+            <a href="#section-tour" class="popup__close">&times;</a>
+            <h2 class="heading-secondary ">Start booking now</h2>
+            <h3 class="heading-tertiary u-margin-top-tiny">important &ndash; please read these terms before booking</h3>
+            <p class="popup__text">
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                reproduced in their exact original form,The standard chunk of Lorem Ipsum used since the 1500s is
+                reproduced below for those
+                interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
+                reproduced
+                in their exact original form,The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
+                for those
+                interested.
+            </p>
+            <a href="#" class="btn btn--green">Book Now</a>
         </div>
     </div>
+</div>
 
 </body>
 

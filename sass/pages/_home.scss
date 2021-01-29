@@ -11,9 +11,9 @@
 .section-feature {
   padding: 20rem 0;
   background-image: linear-gradient(
-                to right,
-                rgba($color-primary-light, 0.8),
-                rgba($color-primary-dark, 0.8)),
+                  to right,
+                  rgba($color-primary-light, 0.8),
+                  rgba($color-primary-dark, 0.8)),
   url("../img/nat-4-small.jpg");
   background-size: cover;
   margin-top: -12rem;
@@ -23,13 +23,13 @@
   // this > * means :first direct child
   & > * {
     transform: skewY(7deg);
-    
-    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em){
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
       background-image: linear-gradient(
-                to right,
-                rgba($color-primary-light, 0.8),
-                rgba($color-primary-dark, 0.8)),
-                url("../img/nat-4.jpg");
+                      to right,
+                      rgba($color-primary-light, 0.8),
+                      rgba($color-primary-dark, 0.8)),
+      url("../img/nat-4.jpg");
       background-size: cover;
     }
   }
@@ -70,15 +70,15 @@
 }
 
 
-  //  in fact, this is just another background-color So, this is actually a gradient.
+//  in fact, this is just another background-color So, this is actually a gradient.
 //  we start from a side and we changed to a transparent color until we want.
 //  we say at zero we want white, we say at 50 we want white, then at 50, which is right here the next step we want transparent
-  //  without any number it is changed from = top to bottom
+//  without any number it is changed from = top to bottom
 //  we should specify the direction here with angle: 90deg= right to left for starting the gradient.
 //  we can specify at different points of the gradient which color there should be. in the percentage: 0% and 50%
 .book {
-  background-image:  linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%,transparent 50%),
-          url("../img/nat-10.jpg");
+  background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),
+  url("../img/nat-10.jpg");
   //  100% is the exact same thing as cover.And, that's because cover stretches the image to occupy the entire container,
   //  where the background-image is applied. And, that's what 100% does. in the "X" direction,
   background-size: 100%;
@@ -86,20 +86,20 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
 
   @include respond(tab-land) {
-    background-image:  linear-gradient(105deg,
+    background-image: linear-gradient(105deg,
             rgba($color-white, .9) 0%,
             rgba($color-white, .9) 65%,
             transparent 65%),
-            url("../img/nat-10.jpg");
+    url("../img/nat-10.jpg");
     //100% was in the "X" direction,so it was not good
     background-size: cover;
   }
 
   @include respond(tab-port) {
-    background-image:  linear-gradient(to right,
+    background-image: linear-gradient(to right,
             rgba($color-white, .9) 0%,
             rgba($color-white, .9) 100%),
-            url("../img/nat-10.jpg");
+    url("../img/nat-10.jpg");
   }
 
   &__form {

@@ -1,6 +1,6 @@
 .story {
   width: 75%;
-//  it's a block element inside a block element, so we can use margin zero and auto.
+  //  it's a block element inside a block element, so we can use margin zero and auto.
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
   background-color: rgba($color-white, .6);
@@ -31,20 +31,20 @@
     height: 15rem;
     background-color: orangered;
     float: left;
-  //  shape-outside just work where the content floats around the element and
-  //  when we want the element that look like that circle or any shape we can use thr clip-path
-  //  it was floating around a circle
-  //  1.the first number we put here is actually the radius
-  //  2. at...  that means that is the center of the circle, so exactly the center horizontally and vertically
-  //  beside having to be floated here, this also only works if the element has defined dimensions, so width and height.
-  //  3.in order for this to work, the element must actually be floated,
+    //  shape-outside just work where the content floats around the element and
+    //  when we want the element that look like that circle or any shape we can use thr clip-path
+    //  it was floating around a circle
+    //  1.the first number we put here is actually the radius
+    //  2. at...  that means that is the center of the circle, so exactly the center horizontally and vertically
+    //  beside having to be floated here, this also only works if the element has defined dimensions, so width and height.
+    //  3.in order for this to work, the element must actually be floated,
     shape-outside: circle(50% at 50% 50%);
     -webkit-shape-outside: circle(50% at 50% 50%);
-  //  So you see, it's like wrapping around a circle.And instead of just imagining a circle we have to put it down with clip-path
-  //
+    //  So you see, it's like wrapping around a circle.And instead of just imagining a circle we have to put it down with clip-path
+    //
     clip-path: circle(50% at 50% 50%);
-  //  let's now add some space here between img and paragraph, and the best way to move around an element that is floated
-  //  is to actually not mess with margins or anything like that we should just use a transform
+    //  let's now add some space here between img and paragraph, and the best way to move around an element that is floated
+    //  is to actually not mess with margins or anything like that we should just use a transform
     transform: translateX(-3rem) skewX(12deg);
 
     position: relative;
@@ -53,18 +53,18 @@
       transform: translateX(-3rem) skewX(0);
     }
 
-  &__img {
-    height: 100%;
-    //for put the picture in the center
-    //we add scale because we want use it for hover
-    //because of this translation
-    transform: translateX(-4rem) scale(1.2);
-        //make a problem for me
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    &__img {
+      height: 100%;
+      //for put the picture in the center
+      //we add scale because we want use it for hover
+      //because of this translation
+      transform: translateX(-4rem) scale(1.2);
+      //make a problem for me
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
 
-    transition: all .2s;
-  }
+      transition: all .2s;
+    }
 
   }
 
@@ -79,7 +79,7 @@
     text-align: center;
     opacity: 0;
     transition: all .5s;
-      //  Just to fix this small glitch that happens for animation.when the name come up
+    //  Just to fix this small glitch that happens for animation.when the name come up
     //when I use it , it doesnt work well
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -103,6 +103,6 @@
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(80%);
     -webkit-filter: blur(3px) brightness(80%);
-    }
+  }
 
 }

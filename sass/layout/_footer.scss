@@ -9,8 +9,8 @@
   }
 
   &__logo-box {
-  //  because the image is in inline elemented,so all we have to do here is to say text align center,
-  //  because an inline element behaves just like text,
+    //  because the image is in inline elemented,so all we have to do here is to say text align center,
+    //  because an inline element behaves just like text,
     text-align: center;
     margin-bottom: 8rem;
 
@@ -32,7 +32,7 @@
     display: inline-block;
 
     @include respond(tab-port) {
-       width: 100%;
+      width: 100%;
       text-align: center;
     }
   }

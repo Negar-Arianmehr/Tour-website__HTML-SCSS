@@ -21,7 +21,7 @@
     // and the right they are both table cells. then browser give them the same height.
     display: table;
     //two transforms in the one property dont work
-     transform: translate(-50%,-50%) scale(.5);
+    transform: translate(-50%, -50%) scale(.5);
     //.2s is the transition dely
     transition: all .4s .2s;
     opacity: 0;
@@ -34,7 +34,7 @@
 
   &__left {
     width: 33.333333%;
-      //  actually have the same height because then it's easier to center this content here vertically in the middle
+    //  actually have the same height because then it's easier to center this content here vertically in the middle
     display: table-cell;
     //because we use the display: table we dont need float
     //float: left;
@@ -109,7 +109,7 @@
     column-count: 2;
     //default is 1em=14pix. Well, because one em is always the font size of the current element.
     column-gap: 4rem;
-    column-rule:1px solid $color-gray-light-2;
+    column-rule: 1px solid $color-gray-light-2;
 
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
@@ -121,7 +121,7 @@
     }
   }
 
-//  when we click on buttom on book now
+  //  when we click on buttom on book now
   &:target {
     opacity: 1;
     visibility: visible;
@@ -129,7 +129,7 @@
 
   &:target &__content {
     opacity: 1;
-    transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   &__close {
